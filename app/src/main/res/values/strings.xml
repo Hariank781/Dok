@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Doktor</string>
+    <string-array name="insurance_option">
+        <item>Do you have insurance?</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+</resources>
