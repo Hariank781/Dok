@@ -88,7 +88,7 @@
         android:layout_marginEnd="20dp"
         android:background="#A1BF61"
         android:ems="10"
-        android:hint=" username"
+        android:hint=" email"
         android:inputType="textPersonName"
         android:textColor="#5193CF"
         android:textColorHint="#5193CF"

@@ -8,7 +8,7 @@
     tools:context=".MainActivity3">
 
     <EditText
-        android:id="@+id/username_page6"
+        android:id="@+id/doctorDD"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
-        android:id="@+id/username_page11"
+        android:id="@+id/doctorMM"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -40,11 +40,11 @@
         android:textColorHint="#5193CF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/username_page6"
+        app:layout_constraintStart_toEndOf="@+id/doctorDD"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
-        android:id="@+id/username_page13"
+        android:id="@+id/doctorYYYY"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -60,11 +60,11 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/username_page11"
+        app:layout_constraintStart_toEndOf="@+id/doctorMM"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
-        android:id="@+id/username_page4"
+        android:id="@+id/doctorSpecialization"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -81,10 +81,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_page3" />
+        app:layout_constraintTop_toBottomOf="@+id/doctorRetypepassword" />
 
     <EditText
-        android:id="@+id/password_page3"
+        android:id="@+id/doctorRetypepassword"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -101,10 +101,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_page" />
+        app:layout_constraintTop_toBottomOf="@+id/doctorPassword" />
 
     <EditText
-        android:id="@+id/password_page"
+        android:id="@+id/doctorPassword"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -121,7 +121,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_page10" />
+        app:layout_constraintTop_toBottomOf="@+id/doctorUsername" />
 
     <TextView
         android:id="@+id/textView4"
@@ -140,7 +140,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/username_page9"
+        android:id="@+id/doctorFullname"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -160,7 +160,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/username_page12"
+        android:id="@+id/doctorMedicallicenseno"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -168,7 +168,7 @@
         android:layout_marginEnd="20dp"
         android:background="#A1BF61"
         android:ems="10"
-        android:hint=" Medical license no."
+        android:hint=" Doctor ID"
         android:inputType="textPersonName"
         android:textColor="#5193CF"
         android:textColorHint="#5193CF"
@@ -177,10 +177,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_page4" />
+        app:layout_constraintTop_toBottomOf="@+id/doctorSpecialization" />
 
     <EditText
-        android:id="@+id/username_page10"
+        android:id="@+id/doctorUsername"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -188,7 +188,7 @@
         android:layout_marginEnd="20dp"
         android:background="#A1BF61"
         android:ems="10"
-        android:hint="  Enter username"
+        android:hint=" Enter email"
         android:inputType="textPersonName"
         android:textColor="#5193CF"
         android:textColorHint="#5193CF"
@@ -197,7 +197,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_page9" />
+        app:layout_constraintTop_toBottomOf="@+id/doctorFullname" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -207,7 +207,7 @@
         android:layout_marginTop="20dp"
         android:background="#A1BF61"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_page12">
+        app:layout_constraintTop_toBottomOf="@+id/doctorMedicallicenseno">
 
         <RadioButton
             android:id="@+id/radio3_male"
@@ -255,7 +255,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
-        app:layout_constraintTop_toBottomOf="@+id/username_page12" />
+        app:layout_constraintTop_toBottomOf="@+id/doctorMedicallicenseno" />
 
     <Button
         android:id="@+id/button1page3"
@@ -276,6 +276,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_page11" />
+        app:layout_constraintTop_toBottomOf="@+id/doctorMM" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

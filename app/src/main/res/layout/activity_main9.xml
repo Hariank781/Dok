@@ -26,10 +26,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_page19" />
+        app:layout_constraintTop_toBottomOf="@+id/patientMM" />
 
     <EditText
-        android:id="@+id/username_page17"
+        android:id="@+id/patientDD"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -60,7 +60,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/radioGroup2"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_insurance" />
+        app:layout_constraintTop_toBottomOf="@+id/patientInsurance" />
 
     <RadioGroup
         android:id="@+id/radioGroup2"
@@ -70,7 +70,7 @@
         android:layout_marginTop="20dp"
         android:background="#A1BF61"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_insurance">
+        app:layout_constraintTop_toBottomOf="@+id/patientInsurance">
 
         <RadioButton
             android:id="@+id/radio9_male"
@@ -105,7 +105,7 @@
     </RadioGroup>
 
     <EditText
-        android:id="@+id/password_page4"
+        android:id="@+id/patientRetypepassword"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -122,10 +122,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_page5" />
+        app:layout_constraintTop_toBottomOf="@+id/patientPassword" />
 
     <EditText
-        android:id="@+id/password_page5"
+        android:id="@+id/patientPassword"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -142,10 +142,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_page3" />
+        app:layout_constraintTop_toBottomOf="@+id/patientUsername" />
 
     <EditText
-        android:id="@+id/username_page"
+        android:id="@+id/patientFullname"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -164,7 +164,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/username_page7"
+        android:id="@+id/patientMedicalhistory"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -180,10 +180,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_page4" />
+        app:layout_constraintTop_toBottomOf="@+id/patientRetypepassword" />
 
     <EditText
-        android:id="@+id/username_page3"
+        android:id="@+id/patientUsername"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -191,7 +191,7 @@
         android:layout_marginEnd="20dp"
         android:background="#A1BF61"
         android:ems="10"
-        android:hint="  Enter username"
+        android:hint=" Enter email"
         android:inputType="textPersonName"
         android:textColor="#5193CF"
         android:textColorHint="#5193CF"
@@ -199,7 +199,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_page" />
+        app:layout_constraintTop_toBottomOf="@+id/patientFullname" />
 
     <TextView
         android:id="@+id/textView2"
@@ -218,7 +218,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner_insurance"
+        android:id="@+id/patientInsurance"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -227,10 +227,10 @@
         style="@style/SpinnerStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_page7" />
+        app:layout_constraintTop_toBottomOf="@+id/patientMedicalhistory" />
 
     <EditText
-        android:id="@+id/username_page19"
+        android:id="@+id/patientMM"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -244,11 +244,11 @@
         android:textColorHint="#5193CF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/username_page17"
+        app:layout_constraintStart_toEndOf="@+id/patientDD"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <EditText
-        android:id="@+id/username_page21"
+        android:id="@+id/patientYYYY"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -264,7 +264,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/username_page19"
+        app:layout_constraintStart_toEndOf="@+id/patientMM"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

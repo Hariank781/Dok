@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "356410822563",
+    "project_id": "doktorfirebase",
+    "storage_bucket": "doktorfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356410822563:android:b75b08c393ea9a7f68d416",
+        "android_client_info": {
+          "package_name": "com.example.doktor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356410822563-mhek5s7moleo32his1qq4kmdu7jq9htf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.doktor",
+            "certificate_hash": "3565999e72d183a988c32031f9587a0364b30850"
+          }
+        },
+        {
+          "client_id": "356410822563-n9u576ep7km8dd0n5mflkru5d529toq4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCj9NqJOoUZEZ2hOZPDecQh2Z6lKN5Dbzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356410822563-n9u576ep7km8dd0n5mflkru5d529toq4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
