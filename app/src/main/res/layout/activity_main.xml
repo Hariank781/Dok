@@ -50,6 +50,7 @@
         android:textColor="#A1BF61"
         android:textSize="48sp"
         android:textStyle="bold"
+        app:iconPadding="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -68,6 +69,7 @@
         android:textColor="#5193CF"
         android:textSize="48sp"
         android:textStyle="bold"
+        app:iconPadding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

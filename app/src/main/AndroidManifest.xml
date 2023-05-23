@@ -14,8 +14,27 @@
         android:theme="@style/Theme.Doktor"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity10"
+            android:name=".MainActivity13"
             android:exported="false" />
+        <activity
+            android:name=".MainActivity12"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity11"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity7"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity6"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity5"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity10"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".MainActivity4"
             android:exported="false" />

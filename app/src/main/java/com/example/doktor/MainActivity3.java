@@ -121,14 +121,15 @@ public class MainActivity3 extends AppCompatActivity {
     public void insertData() {
         int radioId = radioGroup.getCheckedRadioButtonId();
         radioButton = findViewById(radioId);
-        Map<String, String> items = new HashMap<>();
-        items.put("Full name", fullname.getText().toString().trim());
-        items.put("Email", username.getText().toString().trim());
-        items.put("Password", password.getText().toString().trim());
-        items.put("Specialization", specialization.getText().toString().trim());
-        items.put("Doctor ID", medicallicenseno.getText().toString().trim());
-        items.put("Date of birth", dd.getText().toString().trim() + "/" + mm.getText().toString().trim() + "/" + yyyy.getText().toString().trim());
-        items.put("Gender", radioButton.getText().toString().trim());
-        firestore.collection("Doctors").add(items);
+
+        Doctor doctor = new Doctor();
+        doctor.setFullName(fullname.getText().toString().trim());
+        doctor.setEmail(username.getText().toString().trim());
+        doctor.setSpecialization(specialization.getText().toString().trim());
+        doctor.setDoctorID(medicallicenseno.getText().toString().trim());
+        doctor.setDateOfBirth(dd.getText().toString().trim() + "/" + mm.getText().toString().trim() + "/" + yyyy.getText().toString().trim());
+        doctor.setGender(radioButton.getText().toString().trim());
+
+        firestore.collection("Doctors").add(doctor);
     }
 }

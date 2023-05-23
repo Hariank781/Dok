@@ -34,7 +34,7 @@ public class MainActivity9 extends AppCompatActivity {
     EditText fullname, username, password, retypepassword, medicalhistory, dd, mm, yyyy;
     private FirebaseAuth auth;
 
-    private String selectedInsurance; // Declare a class-level variable
+    private String selectedInsurance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
