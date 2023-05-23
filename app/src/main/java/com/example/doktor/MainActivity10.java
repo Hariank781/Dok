@@ -2,10 +2,12 @@ package com.example.doktor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -14,6 +16,7 @@ public class MainActivity10 extends AppCompatActivity {
     private FirebaseFirestore firestore;
     private TextView detailsTextView;
     private TextView doctorsTextView;
+    private BottomNavigationView bottomNavigationView;
 
 
     @Override
@@ -25,6 +28,23 @@ public class MainActivity10 extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
         doctorsTextView = findViewById(R.id.doctorsDetails);
         detailsTextView = findViewById(R.id.patientDetails);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.menu_audio:
+                    startActivity(new Intent(MainActivity10.this, MainActivity11.class));
+                    return true;
+                case R.id.menu_video:
+                    startActivity(new Intent(MainActivity10.this, MainActivity12.class));
+                    return true;
+                case R.id.menu_tools:
+                    startActivity(new Intent(MainActivity10.this, MainActivity13.class));
+                    return true;
+                default:
+                    return false;
+            }
+        });
 
         firestore.collection("Patients").get()
                 .addOnCompleteListener(task -> {
@@ -57,6 +77,7 @@ public class MainActivity10 extends AppCompatActivity {
                         Toast.makeText(MainActivity10.this, "Failed to fetch patient data.", Toast.LENGTH_SHORT).show();
                     }
                 });
+
         firestore.collection("Doctors").get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
