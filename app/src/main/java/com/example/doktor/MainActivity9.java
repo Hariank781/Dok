@@ -1,3 +1,4 @@
+//Patient Registration
 package com.example.doktor;
 
 import androidx.annotation.NonNull;
@@ -94,7 +95,8 @@ public class MainActivity9 extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Registration successful
                                     Toast.makeText(MainActivity9.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                                    insertData();  // Save additional data to Firestore
+                                    String userId = auth.getCurrentUser().getUid(); // Get the user ID
+                                    insertData(userId);  // Save additional data to Firestore using the user ID
 
                                     // Proceed to MainActivity8 (login page)
                                     Intent intent = new Intent(MainActivity9.this, MainActivity8.class);
@@ -106,7 +108,7 @@ public class MainActivity9 extends AppCompatActivity {
                                         Toast.makeText(MainActivity9.this, "Email is already registered.", Toast.LENGTH_SHORT).show();
                                     } else {
                                         // Registration failed
-                                        Toast.makeText(MainActivity9.this, "Registration failed. Make sure password is at least 6 characters long.", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity9.this, "Registration failed. Make sure the password is at least 6 characters long.", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             }
@@ -136,7 +138,7 @@ public class MainActivity9 extends AppCompatActivity {
         radioButton = findViewById(radioId);
     }
 
-    public void insertData() {
+    public void insertData(String userId) {
         int radioId = radioGroup.getCheckedRadioButtonId();
         radioButton = findViewById(radioId);
         Map<String, String> items = new HashMap<>();
@@ -147,6 +149,6 @@ public class MainActivity9 extends AppCompatActivity {
         items.put("Date of birth", dd.getText().toString().trim() + "/" + mm.getText().toString().trim() + "/" + yyyy.getText().toString().trim());
         items.put("Gender", radioButton.getText().toString().trim());
         items.put("Insurance", selectedInsurance); // Use the selectedInsurance variable
-        firestore.collection("Patients").add(items);
+        firestore.collection("Patients").document(userId).set(items); // Use the user ID as the document ID
     }
 }

@@ -8,16 +8,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.Query;
 
 public class MainActivity10 extends AppCompatActivity {
     private FirebaseFirestore firestore;
     private TextView detailsTextView;
     private TextView doctorsTextView;
     private BottomNavigationView bottomNavigationView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +47,17 @@ public class MainActivity10 extends AppCompatActivity {
             }
         });
 
-        firestore.collection("Patients").get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        StringBuilder details = new StringBuilder();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+        if (user != null) {
+            String loggedInPatientEmail = user.getEmail();
 
-                        QuerySnapshot querySnapshot = task.getResult();
-                        if (querySnapshot != null) {
-                            for (QueryDocumentSnapshot document : querySnapshot) {
+            firestore.collection("Patients")
+                    .whereEqualTo("Email", loggedInPatientEmail)
+                    .get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot document : task.getResult()) {
                                 String fullName = document.getString("Full name");
                                 String email = document.getString("Email");
                                 String medicalHistory = document.getString("Medical history");
@@ -68,21 +72,21 @@ public class MainActivity10 extends AppCompatActivity {
                                         + "Gender: " + gender + "\n"
                                         + "Insurance: " + insurance + "\n\n";
 
-                                details.append(patientDetails);
+                                detailsTextView.setText(patientDetails);
                             }
+                        } else {
+                            Toast.makeText(MainActivity10.this, "Failed to fetch patient data.", Toast.LENGTH_SHORT).show();
                         }
-
-                        detailsTextView.setText(details.toString());
-                    } else {
-                        Toast.makeText(MainActivity10.this, "Failed to fetch patient data.", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    });
+        } else {
+            Toast.makeText(MainActivity10.this, "User not logged in.", Toast.LENGTH_SHORT).show();
+        }
 
         firestore.collection("Doctors").get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         StringBuilder doctorsData = new StringBuilder();
-                        for (QueryDocumentSnapshot document : task.getResult()) {
+                        for (DocumentSnapshot document : task.getResult()) {
                             Doctor doctor = document.toObject(Doctor.class);
                             doctorsData.append("Full Name: ").append(doctor.getFullName()).append("\n");
                             doctorsData.append("Email: ").append(doctor.getEmail()).append("\n");
@@ -93,8 +97,7 @@ public class MainActivity10 extends AppCompatActivity {
                             doctorsData.append("\n");
                         }
                         doctorsTextView.setText(doctorsData.toString());
-                    }
-                    else {
+                    } else {
                         Toast.makeText(MainActivity10.this, "Failed to fetch doctor data.", Toast.LENGTH_SHORT).show();
                     }
                 });
