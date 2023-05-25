@@ -149,6 +149,7 @@ public class MainActivity9 extends AppCompatActivity {
         items.put("Date of birth", dd.getText().toString().trim() + "/" + mm.getText().toString().trim() + "/" + yyyy.getText().toString().trim());
         items.put("Gender", radioButton.getText().toString().trim());
         items.put("Insurance", selectedInsurance); // Use the selectedInsurance variable
+        items.put("DoctorID", "");
         firestore.collection("Patients").document(userId).set(items); // Use the user ID as the document ID
     }
 }

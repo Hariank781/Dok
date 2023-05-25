@@ -84,29 +84,45 @@ public class MainActivity3 extends AppCompatActivity {
                     return;
                 }
 
-                // Create user with email and password
-                auth.createUserWithEmailAndPassword(Username, Password)
-                        .addOnCompleteListener(MainActivity3.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Registration successful
-                                    Toast.makeText(MainActivity3.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                                    insertData();  // Save additional data to Firestore
-
-                                    // Proceed to MainActivity2 (login page)
-                                    Intent intent = new Intent(MainActivity3.this, MainActivity2.class);
-                                    startActivity(intent);
-                                    finish();  // Optional: Prevents returning to the registration page when pressing back
+                // Check if the doctorMedicallicenseno already exists
+                firestore.collection("Doctors")
+                        .whereEqualTo("doctorID", Medicallicenseno)
+                        .get()
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                if (!task.getResult().isEmpty()) {
+                                    // doctorMedicallicenseno already exists
+                                    Toast.makeText(MainActivity3.this, "Doctor's Medical License Number already exists.", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                                        // User with the same email already exists
-                                        Toast.makeText(MainActivity3.this, "Email is already registered.", Toast.LENGTH_SHORT).show();
-                                    } else {
-                                        // Registration failed
-                                        Toast.makeText(MainActivity3.this, "Registration failed. Make sure password is atleast 6 characters long.", Toast.LENGTH_SHORT).show();
-                                    }
+                                    // doctorMedicallicenseno is unique
+                                    // Create user with email and password
+                                    auth.createUserWithEmailAndPassword(Username, Password)
+                                            .addOnCompleteListener(MainActivity3.this, new OnCompleteListener<AuthResult>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                                    if (task.isSuccessful()) {
+                                                        // Registration successful
+                                                        Toast.makeText(MainActivity3.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                                                        insertData();  // Save additional data to Firestore
+
+                                                        // Proceed to MainActivity2 (login page)
+                                                        Intent intent = new Intent(MainActivity3.this, MainActivity2.class);
+                                                        startActivity(intent);
+                                                        finish();  // Optional: Prevents returning to the registration page when pressing back
+                                                    } else {
+                                                        if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                                            // User with the same email already exists
+                                                            Toast.makeText(MainActivity3.this, "Email is already registered.", Toast.LENGTH_SHORT).show();
+                                                        } else {
+                                                            // Registration failed
+                                                            Toast.makeText(MainActivity3.this, "Registration failed. Make sure the password is at least 6 characters long.", Toast.LENGTH_SHORT).show();
+                                                        }
+                                                    }
+                                                }
+                                            });
                                 }
+                            } else {
+                                Toast.makeText(MainActivity3.this, "Failed to check doctor's Medical License Number.", Toast.LENGTH_SHORT).show();
                             }
                         });
             }
