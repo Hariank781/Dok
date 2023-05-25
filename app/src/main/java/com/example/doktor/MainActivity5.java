@@ -44,7 +44,7 @@ public class MainActivity5 extends AppCompatActivity implements AudioAdapter.OnA
 
     private void loadAudioItems() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        Query audioQuery = db.collection("Audios");
+        Query audioQuery = db.collection("Audio");
         audioQuery.get().addOnSuccessListener(queryDocumentSnapshots -> {
             audioItems.clear(); // Clear the existing list
 

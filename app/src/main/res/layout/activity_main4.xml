@@ -7,48 +7,6 @@
     android:background="#A1BF61"
     tools:context=".MainActivity4">
 
-    <Button
-        android:id="@+id/sendDoctorID2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="#5193CF"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
-        android:text="Send my data to doctor"
-        android:textAllCaps="false"
-        android:textColor="#A1BF61"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterDoctorID" />
-
-    <EditText
-        android:id="@+id/enterYourDoctorID"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:hint=" Enter your Doctor ID"
-        android:inputType="text"
-        android:textColor="#5193CF"
-        android:textColorHint="#5193CF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/sendDoctorID2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/patientDetailsTextView"
         android:layout_width="wrap_content"
